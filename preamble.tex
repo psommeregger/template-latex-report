@@ -1,0 +1,61 @@
+% !TeX root = report.tex
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % Provide euro and other symbols
+\usepackage{lmodern} % Use the Latin Modern fonts
+  
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+\makeatletter
+\IfFileExists{parskip.sty}{\usepackage{parskip}}{% else
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{amsmath,amssymb}  % For advanced math
+\usepackage{graphicx} % For including graphics
+\usepackage[pdfusetitle]{hyperref} % For hyperlinks in the document
+\usepackage{fancyhdr} % For header and footer
+\usepackage{lastpage} % To get the last page number
+\usepackage{xcolor} % To use custom colors
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage[style=ieee,bibencoding=utf8,sorting=ydnt]{biblatex} % For bibliography
+\addbibresource{references.bib} %Import the bibliography file
+% When using nocite, disable warnings from biblatex
+%\silence{package}{biblatex}
+\DeclareFieldFormat*{title}{\MakeCapital{#1}}   % Change titles to sentence case
+
+% Header and footer settings
+\pagestyle{fancy}
+\usepackage{extramarks}
+\setlength{\headheight}{24.7pt}
+\fancyhf{} % Clear default header and footer
+%\fancyhead[L]{\leftmark}
+\fancyhead[L]{\large\scshape\thetitle} % Left header
+\fancyhead[R]{\includegraphics[width=2.8cm]{images/fh-kaernten-logo.png}} % Right header with logo
+\fancyfoot[R]{\textit{\thepage/\pageref{LastPage}}} % Right footer
+\fancyfoot[C]{\textit{Confidential}} % Centered footer
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+
+\newcommand{\makecustomtitle}{%
+  \makeatletter
+  {\Large{\textbf{\@title}}}
+  \let\thetitle\@title  % Save the title for header
+  \makeatother
+}
+
+%\setcounter{secnumdepth}{-\maxdimen} % remove section numbering

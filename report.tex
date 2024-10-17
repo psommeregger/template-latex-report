@@ -1,0 +1,28 @@
+% !TeX root = report.tex
+\documentclass[11pt,a4paper]{article}
+\input{preamble.tex} % Include the preamble settings
+
+% Set title, author, and date
+\title{WP3 Report Template}
+\author{Your~Name}
+\date{\today}
+
+\begin{document}
+
+% Include a title page
+%\maketitle
+\makecustomtitle
+%\newpage  % (optional) Start a new page
+
+% Include a table of contents
+%\tableofcontents
+%\newpage  % Start a new page
+
+% Include sections
+\input{sections/introduction.tex}
+
+% Bibliography
+\nocite{*} % Include all references
+\printbibliography
+
+\end{document}
