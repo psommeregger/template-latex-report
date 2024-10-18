@@ -1,0 +1,8 @@
+\begin{circuitikz}[american]
+    \draw (0,0) node[above]{$V_{in}$} to[short, o-] ++(1,0)
+    node[op amp, noinv input up, anchor=+](OA){\texttt{OA1}}
+    (OA.-) -- ++(0,-1) coordinate(FB)
+    to[R=$R_1$] ++(0,-2) node[ground]{}
+    (FB) to[R=$R_2$, *-] (FB -| OA.out) -- (OA.out)
+    to [short, *-o] ++(1,0) node[above]{$V_{out}$};
+\end{circuitikz}

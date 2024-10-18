@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+    \node[vcc] at (0, 4) {};
+	\node[ground] at (0, 0) {};
+    \node[nmos](M1) at (0, 1) {$M_1$};
+	\node[nmos](M2) at (0, 3) {$M_2$};
+    \draw (0, 0) -- (M1.E);
+    \draw (0, 4) -- (M2.D);
+    \draw (M2.E) to[short, -*] ++(0, -.25) coordinate(p1) -- (M1.D)
+        (p1) to[short, -o] ++(1,0) node[above]{$V_{out}$};
+    \draw (M2.G) to[short, -*] ++(0, -1) coordinate(p2) -- (M1.G)
+        (p2) to[short, -o] ++(-.5,0) node[above]{$V_{in}$};
+\end{tikzpicture}

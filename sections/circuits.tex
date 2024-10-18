@@ -24,3 +24,36 @@ to[C=$C_c$,-*] (start -| Cctop);
 \end{figure}
 
 In Figure~\ref{fig:triode_amplifier} shows a circuit diagram of a triode tube amplifier.
+\subsection{Non-Inverting Amplifier}
+\label{ssec:non-inverting-amplifier}
+
+\begin{figure}
+    \centering
+    \input{images/tikz/non-inverting-amplifier-tikz.tex}
+    \caption{A non-inverting op amp is an operational amplifier circuit with an output voltage that is in phase with the input voltage.}
+    \label{fig:non-inverting-amplifier}
+\end{figure}
+
+The output voltage can then be given as in equation~\ref{eq:non-inverting-amplifier-output}.
+
+\begin{equation}
+V_{out} = V_{in}+(\frac{V_{in}}{R_1})R_2
+\label{eq:non-inverting-amplifier-output}
+\end{equation}
+
+The gain is given by equation~\ref{eq:non-inverting-amplifier-gain}.
+\begin{equation}
+\frac{V_{out}}{V_{in}} = 1+(\frac{R_2}{R_1})
+\label{eq:non-inverting-amplifier-gain}
+\end{equation}
+
+
+\subsection{Digital Inverter}
+\label{ssec:inverter}
+
+\begin{figure}
+    \centering
+    \input{images/tikz/inverter-tikz.tex}
+    \caption{The ubiquitous digital inverter. The input voltage $V_{in}$ switches one
+    of both transistors on, and the other is off.}\label{fig:inverter}
+\end{figure}
