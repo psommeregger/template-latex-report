@@ -1,10 +1,18 @@
 % !TeX root = report.tex
 \usepackage[margin=2.5cm]{geometry}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}  % For advanced math
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
 \usepackage{lmodern} % Use the Latin Modern fonts
-\usepackage{fontspec}  % optional
 \usepackage{textcomp} % Provide euro and other symbols
   
 % Use upquote if available, for straight quotes in verbatim environments
@@ -22,10 +30,8 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\usepackage{amsmath,amssymb}  % For advanced math
 \usepackage{graphicx} % For including graphics
 \usepackage[pdfusetitle]{hyperref} % For hyperlinks in the document
-\usepackage{fancyhdr} % For header and footer
 \usepackage{lastpage} % To get the last page number
 \usepackage{xcolor} % To use custom colors
 \usepackage[bottom]{footmisc} % Put footnotes to bottom of the page
@@ -108,9 +114,9 @@
 \addbibresource{references.bib} %Import the bibliography file
 % When using nocite, disable warnings from biblatex
 %\silence{package}{biblatex}
-\DeclareFieldFormat*{title}{\MakeCapital{#1}}   % Change titles to sentence case
 
 % Header and footer settings
+\usepackage{fancyhdr} % For header and footer
 \pagestyle{fancy}
 \usepackage{extramarks}
 \setlength{\headheight}{24.7pt}
@@ -123,11 +129,13 @@
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0.2pt}
 
+%\hypersetup{hidelinks}
+
+\makeatletter
 \newcommand{\makecustomtitle}{%
-  \makeatletter
   {\Large{\textbf{\@title}}}
   \let\thetitle\@title  % Save the title for header
-  \makeatother
 }
+\makeatother
 
 %\setcounter{secnumdepth}{-\maxdimen} % remove section numbering

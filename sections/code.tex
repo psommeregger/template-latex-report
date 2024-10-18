@@ -1,0 +1,24 @@
+\section{Code}\label{sec:code}
+
+\begin{lstlisting}[language=Python, caption={The preprocessing step}, label=lst:python]
+    def set_custom_lmclks():
+        """Populate LMK and LMX clocks. Search for clock files.
+        Obtain the properties of the clock files. Program the
+        LMK and LMX clocks with the properties of the files.
+        """
+        
+        # Ensure LMK and LMX devices are known
+        _get_lmclk_devices()
+        
+        # Get custom ref clock locs
+        cwd = os.path.dirname(os.path.realpath(__file__))
+        lmk_loc, lmx_loc = _get_custom_lmclks(cwd)
+        
+        # Get custom ref clock props
+        clk_props = _get_custom_lmclk_props(lmk_loc, lmx_loc)
+        
+        # Program custom ref clocks
+        _program_custom_lmclks(clk_props)
+\end{lstlisting}
+
+A code listing can be found in Listing~\ref{lst:python}.

@@ -1,0 +1,40 @@
+\section{Tables}\label{sec:tables}
+
+\begin{longtable}[]{@{}
+    >{\centering\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1667}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1111}}
+    >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2222}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3611}}@{}}
+  \caption{Caption \label{tbl:table1}}\tabularnewline
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  Centered Header
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Default Aligned
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+  Right Aligned
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Left Aligned
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endfirsthead
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\centering
+  Centered Header
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Default Aligned
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+  Right Aligned
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  Left Aligned
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  First & row & 12.0 & Example of a row that spans multiple lines. \\
+  Second & row & 5.0 & Here's another one. Note the blank line between
+  rows. \\
+  \end{longtable}
+  
+  Table~\ref{tbl:table1} presents \ldots{}
